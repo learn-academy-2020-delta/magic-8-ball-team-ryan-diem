@@ -6,7 +6,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       // Add magic 8 ball outcomes to the array
-      answerArray: [],
+      answerArray: ["Ask again next time", "ABSOLUTELY not!", "If you say so", "Luck is in your favor", "I doubt it", "Yes", "The future is looking hazy", "Hahahah..."],
       question: ""
     }
   }
@@ -14,9 +14,16 @@ class App extends React.Component {
   getAnswer = () => {
     // destructures answerArray out of state
     const { answerArray } = this.state
+    // destructuring with { } in a variable so you don't have to ref this every time this.state.answerArray
+    // like making a hotkey with { }
     // write your code here!
+    // create a location with math random
+    // var treasureLocation = math.random
+    var randomAnswer = Math.floor(Math.random() * 8)
+    // answerArray.randomAnswer
+    // have 8 different responses
     // Update the return statement below to reflect the outcome of your code.
-    return this.state.question
+    return this.state.answerArray[randomAnswer]
   }
 
   handleChange = (e) => {
